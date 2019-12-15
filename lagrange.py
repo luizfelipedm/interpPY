@@ -21,11 +21,21 @@ def inputUser():
     print("DataSet:",list_p)
     return list_p 
 
+def load_file():
+    lineList = [line.rstrip('\n') for line in open('data.txt')]
+    e = list(map(int,lineList))
+    lst = []
+    for i in range(0, len(e)-1, 2):
+        aux = [e[i],e[i+1]]
+        lst.append(aux)
+    return lst
+
 def main():
-
-    lst = inputUser()
+    
+    lst = load_file()
+    #lst = inputUser()
+    print(lst)
     n = int(input("Dado para Previsão: "))
-
     print(f'[ {n}, {lagrange(lst,n):.2f} ]')
     
 if __name__ == "__main__":
