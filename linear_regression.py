@@ -55,6 +55,7 @@ def main():
 
     lst = load_file()
     #lst = inputUser()
+    print(lst)
     n = int(input("Dado para Previsão: "))
     print(f'[ {n}, {calc_regression(lst,n):.2f} ]')
         
